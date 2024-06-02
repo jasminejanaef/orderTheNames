@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="ordernames.css">
+    <title>ORDER THE NAMES</title>
+    <script src="ordernames.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <main id="main">
+            <div id="exercise">
+                <article>
+                    <input type="text" id="studentName" />
+                    <button type="button" onclick="addStudent()">ADD</button>
+                </article>
+
+                <div>
+                    <h1>Kingsland Database</h1>
+                    <ol type="A" id="databaseList">
+                        <li id="A"></li>
+                        <li id="B"></li>
+                        <li id="C"></li>
+                        <li id="D"></li>
+                        <li id="E"></li>
+                        <li id="F"></li>
+                        <li id="G"></li>
+                        <li id="H"></li>
+                        <li id="I"></li>
+                        <li id="J"></li>
+                        <li id="K"></li>
+                        <li id="L"></li>
+                        <li id="M"></li>
+                        <li id="N"></li>
+                        <li id="O"></li>
+                        <li id="P"></li>
+                        <li id="Q"></li>
+                        <li id="R"></li>
+                        <li id="S"></li>
+                        <li id="T"></li>
+                        <li id="U"></li>
+                        <li id="V"></li>
+                        <li id="W"></li>
+                        <li id="X"></li>
+                        <li id="Y"></li>
+                        <li id="Z"></li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script>
+        // Initialize an empty database object
+        var kingslandDatabase = {};
+
+        // Function to add a student from the input field
+        function addStudent() {
+            var name = document.getElementById('studentName').value;
+            registerStudent(name, kingslandDatabase);
+            updateDatabaseList();
+            document.getElementById('studentName').value = ''; // Clear the input field
+        }
+
+        // Function to update the list in the HTML
+        function updateDatabaseList() {
+            for (var key in kingslandDatabase) {
+                if (kingslandDatabase.hasOwnProperty(key)) {
+                    document.getElementById(key).textContent = kingslandDatabase[key];
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
